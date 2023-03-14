@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         //view page found
+        //view page  helllo test
         return view('home');
     }
 }
