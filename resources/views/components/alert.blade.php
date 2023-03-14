@@ -1,3 +1,5 @@
+{{-- used in contact and layout --}}
+
 
 {{-- <div class="alert alert-{{ $type }}">
     {{ $message }}
