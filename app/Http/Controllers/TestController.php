@@ -17,6 +17,7 @@ class TestController extends Controller
     public function formView()
     {
         //helllofdlflsl
+
         return view('form'); //form
     }
 
