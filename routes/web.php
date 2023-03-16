@@ -33,7 +33,7 @@ Route::get('/testing', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/test', [TestController::class, 'testData']);
 
 Route::get('/form', [TestController::class, 'formView']);
@@ -44,3 +44,6 @@ Route::get('/send-notification', [NotificationController::class, 'sendOfferNotif
 Route::get('/push-notificaiton', [WebNotificationController::class, 'index'])->name('push-notificaiton');
 Route::post('/store-token', [WebNotificationController::class, 'storeToken'])->name('store.token');
 Route::post('/send-web-notification', [WebNotificationController::class, 'sendWebNotification'])->name('send.web-notification');
+
+
+Route::get('email-test',[HomeController::class, 'sendMail']);
