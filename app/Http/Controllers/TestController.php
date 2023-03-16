@@ -9,14 +9,17 @@ class TestController extends Controller
     //
     public function testData()
     {
-        // $fruits = array('mango','orange','apple','pineapple','banana'); 
-        //   return view('users',['fruits'=>$fruits]); 
+        // $fruits = array('mango','orange','apple','pineapple','banana');
+        //   return view('users',['fruits'=>$fruits]);
         return view('my_components'); //form
     }
 
     public function formView()
     {
-         
+         /**********************************************************************************************
+          *
+          adasdiuer98er
+          */
         return view('form'); //form
     }
 
