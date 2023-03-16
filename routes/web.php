@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WebNotificationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +27,23 @@ Route::get('/contact', function () {
     return view('pages.contact');
 });
 
+Route::get('/testing', function () {
+    return view('test');
+});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/test', [TestController::class, 'testData']);
 
 Route::get('/form', [TestController::class, 'formView']);
+
+Route::get('/send-notification', [NotificationController::class, 'sendOfferNotification']);
+
+
+Route::get('/push-notificaiton', [WebNotificationController::class, 'index'])->name('push-notificaiton');
+Route::post('/store-token', [WebNotificationController::class, 'storeToken'])->name('store.token');
+Route::post('/send-web-notification', [WebNotificationController::class, 'sendWebNotification'])->name('send.web-notification');
+
+
+Route::get('email-test',[HomeController::class, 'sendMail']);
