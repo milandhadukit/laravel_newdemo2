@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Jobs\SendEmailJob;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //view page  helllo test
+       
+        //view page  fgfddfgdfg
         return view('home');
     }
+    
+
+    public function sendMail()
+    {
+        $details = [
+            'email' => auth()->user()->email,
+            
+        ];
+     
+    
+        dispatch(new SendEmailJob($details));
+      
+
+        dd('done');
+    }
+
 }
